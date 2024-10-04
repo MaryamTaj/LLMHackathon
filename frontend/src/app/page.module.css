@@ -1,10 +1,12 @@
 .page {
-  --gray-rgb: 0, 0, 0;
+  --gray-rgb: 0, 0, 0; /* Keep black for text */
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
+  --button-primary-hover: #b0d4f1; /* Light blue for primary button hover */
+  --button-secondary-hover: #f0f8ff; /* Very light blue for secondary button hover */
+  --foreground: #007bff; /* Primary color (light blue) */
+  --background: #ffffff; /* White background */
 
   display: grid;
   grid-template-rows: 20px 1fr 20px;
@@ -14,16 +16,17 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  background: var(--background); /* Set background to white */
 }
 
 @media (prefers-color-scheme: dark) {
   .page {
-    --gray-rgb: 255, 255, 255;
+    --gray-rgb: 255, 255, 255; /* Keep white for dark mode */
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
+    --button-primary-hover: #ccc; /* Light gray for primary button hover in dark mode */
+    --button-secondary-hover: #1a1a1a; /* Dark for secondary button hover in dark mode */
   }
 }
 
@@ -50,7 +53,7 @@
 
 .main code {
   font-family: inherit;
-  background: var(--gray-alpha-100);
+  background: var(--gray-alpha-100); /* Light gray for code background */
   padding: 2px 4px;
   border-radius: 4px;
   font-weight: 600;
@@ -79,8 +82,8 @@
 }
 
 a.primary {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--foreground); /* Light blue background */
+  color: var(--background); /* White text */
   gap: 8px;
 }
 
@@ -108,12 +111,12 @@ a.secondary {
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
-    background: var(--button-primary-hover);
+    background: var(--button-primary-hover); /* Light blue for hover effect */
     border-color: transparent;
   }
 
   a.secondary:hover {
-    background: var(--button-secondary-hover);
+    background: var(--button-secondary-hover); /* Light background for hover effect */
     border-color: transparent;
   }
 
